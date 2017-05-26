@@ -1,6 +1,6 @@
 //
 //  CommonTools.swift
-//  MU
+//  YZTools
 //
 //  Created by heyuze on 16/7/8.
 //  Copyright © 2016年 HYZ. All rights reserved.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-let Gift_Name = ["", "花", "黄瓜鸡", "金话筒", "套套气球", "我爱你", "彩虹跑车", "轮船", "城堡"]
-let Gift_FileName = ["", "flower_1.png", "cucumber_1", "microphone_1.png", "tt_1.png", "", "", "", ""]
+let Gift_Name = ["套套气球", "花", "黄瓜鸡"]
+let Gift_FileName = ["tt_1.png", "flower_1.png", "cucumber_1"]
 let CONTAINER_COLOR = RGB(r: 0x00, g: 0x00, b: 0x00, alpha: 0.2)
 
 
@@ -24,8 +24,8 @@ func randomSmallCaseString(length: Int) -> String {
     return output
 }
 
-// MARK: - Color
 
+// MARK: - Color
 // RGB颜色
 func RGB(r: CGFloat, g: CGFloat, b: CGFloat, alpha: CGFloat) -> UIColor {
     return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: alpha)
@@ -43,6 +43,7 @@ public extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
+
 
 // MARK: - 时间
 // 秒数转换为时间

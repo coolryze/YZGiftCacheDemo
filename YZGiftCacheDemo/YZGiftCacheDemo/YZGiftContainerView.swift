@@ -1,6 +1,6 @@
 //
-//  GiftContainerView.swift
-//  LiveRoomDemo
+//  YZGiftContainerView.swift
+//  YZGiftCacheDemo
 //
 //  Created by heyuze on 16/8/9.
 //  Copyright © 2016年 HYZ. All rights reserved.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class GiftContainerView: UIView {
+class YZGiftContainerView: UIView {
     
     // 礼物视图数组
-    var giftViews: [GiftView] = [GiftView]()
+    var giftViews: [YZGiftView] = [YZGiftView]()
     // 礼物模型数组
-    var gifts: [Gift] = [Gift]()
+    var gifts: [YZGift] = [YZGift]()
 
     
     // MARK: - init
@@ -38,21 +38,21 @@ class GiftContainerView: UIView {
     private func setupUI() {
         backgroundColor = UIColor.clear
         
-        let giftView1 = GiftView()
+        let giftView1 = YZGiftView()
         giftView1.index = 0
         giftView1.hidenCompleteBlock = { [weak self] giftView in
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.nextGift(giftView: giftView)
+            strongSelf.nextGift(with: giftView)
         }
-        let giftView2 = GiftView()
+        let giftView2 = YZGiftView()
         giftView2.index = 1
         giftView2.hidenCompleteBlock = { [weak self] giftView in
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.nextGift(giftView: giftView)
+            strongSelf.nextGift(with: giftView)
         }
         self.addSubview(giftView1)
         self.addSubview(giftView2)
@@ -64,8 +64,8 @@ class GiftContainerView: UIView {
     // MARK: - Func
     
     // 插入礼物
-    func insertGift(gift: Gift) {
-        let giftView = examineGiftView(gift: gift)
+    func insert(gift: YZGift) {
+        let giftView = examineGiftView(with: gift)
         if giftView != nil {
             giftView?.shakeAnimation(number: 1)
         } else {
@@ -75,31 +75,31 @@ class GiftContainerView: UIView {
                 guard let giftView = freeGiftViews.first else {
                     return
                 }
-                let gifts = subarrayWithGift(gift: gift)
-                giftView.showGiftView(gift: gift, complete: {
+                let gifts = subarray(with: gift)
+                giftView.showGiftView(with: gift, complete: {
                     giftView.shakeAnimation(number: gifts.count)
                 })
             }
         }
     }
     
-    private func nextGift(giftView: GiftView) {
+    private func nextGift(with giftView: YZGiftView) {
         if self.gifts.count != 0 {
             guard let gift = self.gifts.first else {
                 return
             }
-            let gifts = subarrayWithGift(gift: gift)
-            giftView.showGiftView(gift: gift, complete: {
+            let gifts = subarray(with: gift)
+            giftView.showGiftView(with: gift, complete: {
                 giftView.shakeAnimation(number: gifts.count)
             })
         }
     }
     
     // 检测当前是否有同样类型的礼物在展示
-    private func examineGiftView(gift: Gift) -> GiftView? {
-        for giftView: GiftView in self.giftViews {
+    private func examineGiftView(with gift: YZGift) -> YZGiftView? {
+        for giftView: YZGiftView in self.giftViews {
             // 如果赠送者相同，且礼物也相同
-            if (giftView.gift?.user_id == gift.user_id) && (giftView.gift?.gift_ID == gift.gift_ID) {
+            if (giftView.gift?.user_id == gift.user_id) && (giftView.gift?.gift_id == gift.gift_id) {
                 //当前正在展示动画并且不是隐藏动画
                 if (giftView.state != .none) && (giftView.state != .hiding) {
                     return giftView
@@ -110,8 +110,8 @@ class GiftContainerView: UIView {
     }
     
     // 检测当前是否有空闲的礼物视图
-    private func examineFreeGiftViews() -> [GiftView] {
-        var freeGiftViews = [GiftView]()
+    private func examineFreeGiftViews() -> [YZGiftView] {
+        var freeGiftViews = [YZGiftView]()
         for giftView in self.giftViews {
             if giftView.state == .none {
                 freeGiftViews.append(giftView)
@@ -121,12 +121,12 @@ class GiftContainerView: UIView {
     }
     
     // 取缓存中取出和gift类型相同的礼物
-    private func subarrayWithGift(gift: Gift) -> [Gift] {
-        var gifts = [Gift]()
+    private func subarray(with gift: YZGift) -> [YZGift] {
+        var gifts = [YZGift]()
         var indexArr = [Int]()
         for i in 0..<self.gifts.count {
             let currentGift = self.gifts[i]
-            if (currentGift.user_id == gift.user_id) && (currentGift.gift_ID == gift.gift_ID) {
+            if (currentGift.user_id == gift.user_id) && (currentGift.gift_id == gift.gift_id) {
                 gifts.append(currentGift)
                 indexArr.append(i)
             }

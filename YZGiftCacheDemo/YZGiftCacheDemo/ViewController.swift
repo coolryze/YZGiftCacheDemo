@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var giftContainerView: GiftContainerView = GiftContainerView()
+    private lazy var giftContainerView: YZGiftContainerView = YZGiftContainerView()
     
 
     override func viewDidLoad() {
@@ -39,33 +39,33 @@ class ViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func tt() {
-        let gift = Gift()
-        gift.user_id = 4
+        let gift = YZGift()
+        gift.user_id = 1
         gift.nickname = "cool"
-        gift.header = "http://www.baidu.com"
-        gift.level = 4
-        gift.gift_ID = 4
-        giftContainerView.insertGift(gift: gift)
+        gift.header = "jinxC"
+        gift.level = 1
+        gift.gift_id = 0
+        giftContainerView.insert(gift: gift)
     }
     
     @IBAction func flower() {
-        let gift = Gift()
-        gift.user_id = 1
-        gift.nickname = "cool"
-        gift.header = "http://www.baidu.com"
+        let gift = YZGift()
+        gift.user_id = 2
+        gift.nickname = "hyz"
+        gift.header = "cdl"
         gift.level = 1
-        gift.gift_ID = 1
-        giftContainerView.insertGift(gift: gift)
+        gift.gift_id = 1
+        giftContainerView.insert(gift: gift)
     }
     
     @IBAction func cucumber() {
-        let gift = Gift()
-        gift.user_id = 2
-        gift.nickname = "HYZ"
-        gift.header = "http://www.baidu.com"
-        gift.level = 2
-        gift.gift_ID = 2
-        giftContainerView.insertGift(gift: gift)
+        let gift = YZGift()
+        gift.user_id = 3
+        gift.nickname = "ryze"
+        gift.header = "miao"
+        gift.level = 1
+        gift.gift_id = 2
+        giftContainerView.insert(gift: gift)
     }
     
 }

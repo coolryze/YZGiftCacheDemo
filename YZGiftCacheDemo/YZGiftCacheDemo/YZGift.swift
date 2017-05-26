@@ -1,6 +1,6 @@
 //
-//  Gift.swift
-//  LiveRoomDemo
+//  YZGift.swift
+//  YZGiftCacheDemo
 //
 //  Created by heyuze on 16/8/9.
 //  Copyright © 2016年 HYZ. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Gift: NSObject {
+class YZGift: NSObject {
     
     // 昵称
     var nickname: String = ""
@@ -23,6 +23,6 @@ class Gift: NSObject {
     var level: Int = 0
     
     // 礼物ID
-    var gift_ID: Int = 0
+    var gift_id: Int = 0
     
 }

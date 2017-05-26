@@ -50,9 +50,9 @@
 		60DA80591ED41B440086440F /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA80361ED41B440086440F /* LayoutConstraint.swift */; };
 		60DA805A1ED41B440086440F /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA80371ED41B440086440F /* LayoutConstraintItem.swift */; };
 		60DA805B1ED41B440086440F /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA80391ED41B440086440F /* UILayoutSupport+Extensions.swift */; };
-		60DA805F1ED41B6E0086440F /* Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA805C1ED41B6E0086440F /* Gift.swift */; };
-		60DA80601ED41B6E0086440F /* GiftContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA805D1ED41B6E0086440F /* GiftContainerView.swift */; };
-		60DA80611ED41B6E0086440F /* GiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA805E1ED41B6E0086440F /* GiftView.swift */; };
+		60DA805F1ED41B6E0086440F /* YZGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA805C1ED41B6E0086440F /* YZGift.swift */; };
+		60DA80601ED41B6E0086440F /* YZGiftContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA805D1ED41B6E0086440F /* YZGiftContainerView.swift */; };
+		60DA80611ED41B6E0086440F /* YZGiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA805E1ED41B6E0086440F /* YZGiftView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,9 +114,9 @@
 		60DA80371ED41B440086440F /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		60DA80381ED41B440086440F /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
 		60DA80391ED41B440086440F /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
-		60DA805C1ED41B6E0086440F /* Gift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gift.swift; sourceTree = "<group>"; };
-		60DA805D1ED41B6E0086440F /* GiftContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftContainerView.swift; sourceTree = "<group>"; };
-		60DA805E1ED41B6E0086440F /* GiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftView.swift; sourceTree = "<group>"; };
+		60DA805C1ED41B6E0086440F /* YZGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZGift.swift; sourceTree = "<group>"; };
+		60DA805D1ED41B6E0086440F /* YZGiftContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZGiftContainerView.swift; sourceTree = "<group>"; };
+		60DA805E1ED41B6E0086440F /* YZGiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZGiftView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +162,9 @@
 				60DA800D1ED40DE70086440F /* Tools */,
 				60DA7FED1ED3DF950086440F /* AppDelegate.swift */,
 				60DA7FEF1ED3DF950086440F /* ViewController.swift */,
-				60DA805D1ED41B6E0086440F /* GiftContainerView.swift */,
-				60DA805E1ED41B6E0086440F /* GiftView.swift */,
-				60DA805C1ED41B6E0086440F /* Gift.swift */,
+				60DA805D1ED41B6E0086440F /* YZGiftContainerView.swift */,
+				60DA805E1ED41B6E0086440F /* YZGiftView.swift */,
+				60DA805C1ED41B6E0086440F /* YZGift.swift */,
 				60DA7FF11ED3DF950086440F /* Main.storyboard */,
 				60DA7FF41ED3DF950086440F /* Assets.xcassets */,
 				60DA7FF61ED3DF950086440F /* LaunchScreen.storyboard */,
@@ -361,18 +361,18 @@
 				60DA80481ED41B440086440F /* ConstraintMaker.swift in Sources */,
 				60DA80431ED41B440086440F /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				60DA803D1ED41B440086440F /* ConstraintConstantTarget.swift in Sources */,
-				60DA805F1ED41B6E0086440F /* Gift.swift in Sources */,
+				60DA805F1ED41B6E0086440F /* YZGift.swift in Sources */,
 				60DA803A1ED41B440086440F /* Constraint.swift in Sources */,
 				60DA7FF01ED3DF950086440F /* ViewController.swift in Sources */,
 				60DA803F1ED41B440086440F /* ConstraintDSL.swift in Sources */,
-				60DA80601ED41B6E0086440F /* GiftContainerView.swift in Sources */,
+				60DA80601ED41B6E0086440F /* YZGiftContainerView.swift in Sources */,
 				60DA804C1ED41B440086440F /* ConstraintMakerPriortizable.swift in Sources */,
 				60DA803B1ED41B440086440F /* ConstraintAttributes.swift in Sources */,
 				60DA805A1ED41B440086440F /* LayoutConstraintItem.swift in Sources */,
 				60DA804F1ED41B440086440F /* ConstraintOffsetTarget.swift in Sources */,
 				60DA80441ED41B440086440F /* ConstraintLayoutGuide.swift in Sources */,
 				60DA80551ED41B440086440F /* ConstraintView.swift in Sources */,
-				60DA80611ED41B6E0086440F /* GiftView.swift in Sources */,
+				60DA80611ED41B6E0086440F /* YZGiftView.swift in Sources */,
 				60DA80451ED41B440086440F /* ConstraintLayoutGuideDSL.swift in Sources */,
 				60DA805B1ED41B440086440F /* UILayoutSupport+Extensions.swift in Sources */,
 				60DA804A1ED41B440086440F /* ConstraintMakerExtendable.swift in Sources */,

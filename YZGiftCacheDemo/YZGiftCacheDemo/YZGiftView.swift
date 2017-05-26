@@ -1,6 +1,6 @@
 //
-//  GiftView.swift
-//  LiveRoomDemo
+//  YZGiftView.swift
+//  YZGiftCacheDemo
 //
 //  Created by heyuze on 16/8/9.
 //  Copyright © 2016年 HYZ. All rights reserved.
@@ -20,10 +20,10 @@ enum AnimationState {
 }
 
 
-class GiftView: UIView {
+class YZGiftView: UIView {
     
     // 隐藏动画完成后执行block
-    var hidenCompleteBlock: ((_ giftView: GiftView)->())?
+    var hidenCompleteBlock: ((_ giftView: YZGiftView)->())?
     
     
     // 在容器所处的坐标
@@ -43,7 +43,7 @@ class GiftView: UIView {
     var caches: [Int] = [Int]()
     
     // 礼物
-    var gift: Gift? {
+    var gift: YZGift? {
         didSet {
             self.alpha = 0
             self.number = 0
@@ -60,10 +60,10 @@ class GiftView: UIView {
             self.thirdNumberView.image = nil
             self.fourthNumberView.image = nil
             
-//            iconView.yy_setImageWithURL(NSURL(string: gift!.header!), placeholder: ICON_PLACEHOLDER_SMALL)
+            iconView.image = UIImage(named: gift!.header)
             self.nameLabel.text = gift!.nickname
-            self.giftNameLabel.text = getGiftName(gift_id: gift!.gift_ID)
-            self.giftView.image = UIImage(named: getGiftFileName(gift_id: gift!.gift_ID))
+            self.giftNameLabel.text = getGiftName(gift_id: gift!.gift_id)
+            self.giftView.image = UIImage(named: getGiftFileName(gift_id: gift!.gift_id))
         }
     }
     
@@ -120,7 +120,7 @@ class GiftView: UIView {
             make.width.equalTo(82) //
         }
         sendLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(iconView)
+            make.bottom.equalTo(iconView).offset(-2)
             make.leading.equalTo(iconView.snp.trailing).offset(5)
         }
         giftNameLabel.snp.makeConstraints { (make) in
@@ -142,7 +142,7 @@ class GiftView: UIView {
     // MARK: - Animation
     
     // 礼物视图初始化、出现动画
-    func showGiftView(gift: Gift, complete: @escaping ()->()) {
+    func showGiftView(with gift: YZGift, complete: @escaping ()->()) {
         self.gift = gift
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -316,7 +316,7 @@ class GiftView: UIView {
     }()
     
     private lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel(text: "NAME", textColor: RGB(r: 0xec, g: 0xc7, b: 0x76, alpha: 1), fontSize: 13)
+        let nameLabel = UILabel(text: "name", textColor: RGB(r: 0xec, g: 0xc7, b: 0x76, alpha: 1), fontSize: 13)
         return nameLabel
     }()
     
@@ -326,7 +326,7 @@ class GiftView: UIView {
     }()
     
     private lazy var giftNameLabel: UILabel = {
-        let giftNameLabel = UILabel(text: "Gift", textColor: RGB(r: 0xec, g: 0xc7, b: 0x76, alpha: 1), fontSize: 10)
+        let giftNameLabel = UILabel(text: "gift", textColor: RGB(r: 0xec, g: 0xc7, b: 0x76, alpha: 1), fontSize: 10)
         return giftNameLabel
     }()
     
